@@ -2,11 +2,9 @@ const mongoose = require('mongoose');
 const dotenv = require("dotenv");
 
 dotenv.config();
-const config = require('config');
-const db = config.get('mongoURI');
 const connectDB = async () => {
   try {
-    mongoose.connect(db, {
+    mongoose.connect(process.env.mongoURI, {
       useNewUrlParser: true,
       useCreateIndex: true,
     });
