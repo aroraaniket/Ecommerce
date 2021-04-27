@@ -84,3 +84,16 @@ const isAdmin = (req, res, next) => {
   return res.status(401).send({ message: 'Admin Token is not valid.' });
 };
 module.exports = { isAuth, isAdmin };
+
+
+
+
+/*mongoURI="mongodb+srv://Aniket123:Aniket123@cluster0.sggzi.mongodb.net/myFirstDatabase?retryWrites=true&w=majority"
+JWT_SECRET=somethingSECRET
+TOKEN_SECRET=somethingSECRET
+BRAINTREE_MERCHANT_ID=53hr7rgwqktxwmrs
+BRAINTREE_PUBLIC_KEY=6qjjhts245nwb6gz
+BRAINTREE_PRIVATE_KEY=c8e67ccc668fa84d49a3d12d0cb402b6
+
+
+*/
