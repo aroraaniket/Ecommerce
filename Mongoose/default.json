@@ -1,5 +1,6 @@
 {
 
-    "mongoURI":"mongodb+srv://Aniket123:Aniket123@cluster0.sggzi.mongodb.net/myFirstDatabase?retryWrites=true&w=majority"
-
+    "mongoURI":"mongodb+srv://Aniket123:Aniket123@cluster0.sggzi.mongodb.net/myFirstDatabase?retryWrites=true&w=majority",
+"JWT_SECRET":"somethingSECRET",
+    "TOKEN_SECRET":"somethingSECRET"
 }
