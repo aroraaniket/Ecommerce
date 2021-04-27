@@ -3,9 +3,10 @@ const config = require('config');
 const db = config.get('mongoURI');
 const connectDB = async () => {
   try {
-    mongoose.connect(db, {
+   await  mongoose.connect(db, {
       useNewUrlParser: true,
       useCreateIndex: true,
+      useFindAndModify: false,
     });
     console.log('mongoose connected');
   } catch (err) {
