@@ -5,6 +5,7 @@ const { getToken, isAuth } = require('../utils');
 const bcrypt = require('bcryptjs');
 const Joi = require('@hapi/joi');
 const jwt = require('jsonwebtoken');
+const config = require('config');
 //get user
 router.get('/', isAuth, async function (req, res) {
   //find user by findBYId using req.user in which we used token to get th user and
@@ -94,7 +95,7 @@ router.post('/register', async (req, res) => {
     };
     jwt.sign(
       payload,
-      process.env.TOKEN_SECRET,
+      config.get('TOKEN_SECRET'), 
       { expiresIn: '1800s' },
       function (err, token) {
         if (err) {
@@ -148,7 +149,7 @@ router.post('/signin', async (req, res) => {
 
     jwt.sign(
       payload,
-      process.env.TOKEN_SECRET,
+      config.get('TOKEN_SECRET'),
       { expiresIn: '1800s' },
       function (err, token) {
         if (err) {
@@ -192,7 +193,7 @@ router.get('/createadmin', async (req, res) => {
     res.send(newUser);
   } catch (err) {
     console.error(err.message);
-    res.status(500).send('server error');
+    res.status(500).send('server error'); 
   }
 });
 module.exports = router;
