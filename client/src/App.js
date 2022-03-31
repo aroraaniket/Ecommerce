@@ -24,6 +24,7 @@ import LinkMenScreen from './Screens/LinkMenScreen';
 import FooterScreen from './Screens/footerScreen';
 import LinkWomenScreen from './Screens/LinkWomenScreen';
 import LinkKidsScreen from './Screens/LinkkidsScreen';
+import Front from './Front/Front';
 
 if (localStorage.token) {
   setAuthToken(localStorage.token);
@@ -39,12 +40,12 @@ function App() {
         
         <div className='grid-container'>
         <Route path='/' component={NavbarScreen}></Route>
-     
+      
           <main className="main">
           <Alert />
             <div className='content'>
           
-           
+        
   
               <Route path='/products' component={ProductsScreen}></Route>
               <Route path='/shipping' component={ShippingScreen}></Route>
@@ -55,11 +56,12 @@ function App() {
               <Route path='/wishlist' component={WishlistScreen}></Route>
               <Route path='/product/:id' component={ProductScreen} />
               <Route path='/cart/:id?' component={CartScreen} />
-              <Route path='/' exact component={HomeScreen} />
+          <Route path='/' exact component={HomeScreen} /> 
               <Route path='/search/' component={SearchScreen} />
               <Route exact path='/shop/men' component={LinkMenScreen} />
               <Route exact path='/shop/women' component={LinkWomenScreen} />
               <Route exact path='/shop/kids' component={LinkKidsScreen} />
+              
             </div>
          
           </main>

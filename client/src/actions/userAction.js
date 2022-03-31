@@ -29,7 +29,7 @@ const loadUser = () => async (dispatch) => {
       payload: data,
     });
     dispatch(loadShipping());
-  } catch (err) {
+  } catch (err) { 
     dispatch({
       type: AUTH_ERROR,
     });

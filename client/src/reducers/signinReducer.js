@@ -22,7 +22,7 @@ function userReducer(state = intialState, action) {
   switch (type) {
     case USER_LOADED:
       return {
-        ...state,
+        ...state, 
         isAuthenticated: true,
         loading: false,
         user: payload,

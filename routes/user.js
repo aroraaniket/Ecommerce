@@ -3,7 +3,7 @@ const router = express.Router();
 const User = require('../models/user');
 const { getToken, isAuth } = require('../utils');
 const bcrypt = require('bcryptjs');
-const Joi = require('@hapi/joi');
+const Joi = require('@hapi/joi'); 
 const jwt = require('jsonwebtoken');
 const config = require('config');
 //get user
@@ -150,7 +150,7 @@ router.post('/signin', async (req, res) => {
     jwt.sign(
       payload,
       config.get('TOKEN_SECRET'),
-      { expiresIn: '1800s' },
+      { expiresIn: '18s' },
       function (err, token) {
         if (err) {
           throw err;
@@ -178,7 +178,7 @@ router.post('/signin', async (req, res) => {
   } catch (err) {
     console.error(err.message);
     res.status(500).send('server error');
-  }
+  } 
 });
 //admin
 router.get('/createadmin', async (req, res) => {

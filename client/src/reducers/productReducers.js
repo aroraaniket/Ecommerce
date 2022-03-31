@@ -4,7 +4,7 @@ import {
   PRODUCT_LIST_FAIL,
   PRODUCT_DETAILS_SUCCESS,
   PRODUCT_DETAILS_FAIL,
-  PRODUCT_DETAILS_REQUEST, 
+  PRODUCT_DETAILS_REQUEST,
   PRODUCT_SAVE_SUCCESS,
   PRODUCT_SAVE_REQUEST,
   PRODUCT_SAVE_FAIL,
@@ -19,8 +19,8 @@ import {
   PRODUCT_LIST_KIDS_REQUEST,
   PRODUCT_LIST_WOMEN_FAIL,
   PRODUCT_LIST_WOMEN_SUCCESS,
-  PRODUCT_LIST_WOMEN_REQUEST
-} from '../constants/product';
+  PRODUCT_LIST_WOMEN_REQUEST,
+} from "../constants/product";
 
 function productListReducer(state = { products: [] }, action) {
   const { type, payload } = action;
@@ -35,12 +35,12 @@ function productListReducer(state = { products: [] }, action) {
         error: payload,
       };
     default:
-       return state;
+      return state;
   }
 }
 function productListMENReducer(state = { products: [] }, action) {
   const { type, payload } = action;
-  switch (type) { 
+  switch (type) {
     case PRODUCT_LIST_MEN_REQUEST:
       return { loading: true, products: [] };
     case PRODUCT_LIST_MEN_SUCCESS:
@@ -51,12 +51,9 @@ function productListMENReducer(state = { products: [] }, action) {
         error: payload,
       };
     default:
-       return state;
+      return state;
   }
 }
- 
-
-
 
 function productListWOMENReducer(state = { products: [] }, action) {
   const { type, payload } = action;
@@ -71,7 +68,7 @@ function productListWOMENReducer(state = { products: [] }, action) {
         error: payload,
       };
     default:
-       return state;
+      return state;
   }
 }
 
@@ -88,14 +85,9 @@ function productListKIDSReducer(state = { products: [] }, action) {
         error: payload,
       };
     default:
-       return state;
+      return state;
   }
 }
-
-
-
-
-
 
 function productDetailsReducer(state = { product: {} }, action) {
   const { type, payload } = action;

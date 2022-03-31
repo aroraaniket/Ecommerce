@@ -1,15 +1,15 @@
 const express = require('express');
 const router = express.Router();
-const { isAuth } = require('../utils');
+const { isAuth } = require('../utils'); 
 const Shipping = require('../models/shipping');
 
-//get current user shipping address
+//get current user shipping address 
 router.get('/me', isAuth, async function (req, res) {
   const shipping = await Shipping.findOne({
     user: req.user.id,
   }).populate('user', ['name']);
   // console.log(user);
-  try {
+  try { 
     if (!shipping) {
       return res
         .status(400)
